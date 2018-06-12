@@ -12,4 +12,8 @@ func (e *IOError) Error() string {
 	return e.message
 }
 
+func NewError(m string) *IOError {
+	return &IOError{message: m}
+}
+
 var ErrRepeat = errors.New("wait next IO")

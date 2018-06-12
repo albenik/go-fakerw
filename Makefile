@@ -7,6 +7,10 @@ SRC := $(shell find $(MKFILE_DIR) -type f -name '*.go' | grep -v /vendor/)
 .PHONY: all
 all: list test build
 
+.PHONY: check
+check:
+	$(GO) list -m -u
+
 .PHONY: list
 list:
 	$(GO) list -m
